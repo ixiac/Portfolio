@@ -4,6 +4,8 @@ export type ProjectType = {
   imgSrc: string;
   title: string;
   tags: string[];
+  descTitle: string;
+  desc: string;
   projectLink: string;
 };
 
