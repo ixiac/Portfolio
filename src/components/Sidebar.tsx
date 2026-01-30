@@ -11,7 +11,7 @@ export const Sidebar = () => {
     return (
         <Sheet>
             <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-white border-white m-4 fixed top-4 right-4 z-50 border-2 hover:border-primary 
+                <Button variant="ghost" size="icon" className="text-white border-neutral-600 m-4 fixed top-4 right-4 z-50 border-2 hover:border-primary 
                 bg-neutral-800 py-5 px-5 hover:text-primary cursor-pointer rounded-full">
                     <MenuIcon size={30} />
                 </Button>
@@ -26,8 +26,8 @@ export const Sidebar = () => {
                                 key={link.label}
                                 href={link.link}
                                 onClick={() => setActive(link.link)}
-                                className={cn("gap-2 flex items-center hover:text-primary text-neutral-300 transition-colors duration-200 text-base",
-                                    active === link.link && "text-primary"
+                                className={cn("gap-2 flex items-center hover:text-emerald-500 text-neutral-300 transition-colors duration-200 text-base",
+                                    active === link.link && "text-emerald-500"
                                 )}
                             >
                                 <Icon className="inline mr-2" size={16} />
@@ -48,7 +48,7 @@ export const Sidebar = () => {
                                 href={social.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-2 text-neutral-300 hover: transition-colors duration-200 hover:text-primary"
+                                className="p-2 text-neutral-300 hover: transition-colors duration-200 hover:text-emerald-500"
                             >
                                 <Icon className="size-4" />
                             </a>
