@@ -20,11 +20,11 @@ export const Resume = () => {
         subtitle="Professional background and experience"
       />
 
-      <motion.p variants={fadeUp} className="mt-4 text-neutral-300">
+      <motion.p variants={fadeUp} className="mt-4 dark:text-neutral-300">
         My Education, Experience, and Tech Stack at a Glance
       </motion.p>
 
-      <div className="grid gap-x-10 my-16 md:grid-cols-2">
+      <div className="grid gap-x-10 mt-16 md:grid-cols-2">
         <motion.div variants={fadeUp} className="mb-16 md:md-0">
           <h2 className="text-3xl font-bold text-emerald-600 mb-8 capitalize">
             Education
@@ -50,7 +50,7 @@ export const Resume = () => {
         </motion.div>
       </div>
 
-      <div className="my-16">
+      <div className="mb-16">
         <motion.h2
           variants={fadeUp}
           className="text-3xl font-bold text-emerald-600 mb-8 capitalize"

@@ -16,13 +16,13 @@ export const Hero = () => {
         variants={fadeUp}
         className="flex items-center justify-center py-1 gap-2 w-42"
       >
-        <SparkleIcon size={15} className="font-medium text-white" />
-        <span className="font-semibold text-white">Introduction</span>
+        <SparkleIcon size={15} className="font-medium dark:text-white" />
+        <span className="font-semibold dark:text-white">Introduction</span>
       </motion.p>
 
       <motion.h1
         variants={fadeUp}
-        className="text-neutral-200 text-4xl md:text-4xl lg:text-6xl font-medium capitalize mt-4 max-w-3xl md:leading-16"
+        className="dark:text-neutral-200 text-4xl md:text-4xl lg:text-6xl font-medium capitalize mt-4 max-w-3xl md:leading-16"
       >
         I'm{" "}
         <span className="text-emerald-500 font-semibold">
@@ -30,7 +30,7 @@ export const Hero = () => {
         </span>
         , a Full-Stack Web Developer & Data Analyst.
       </motion.h1>
-      <motion.p variants={fadeUp} className="text-neutral-300 mt-8 max-w-2xl">
+      <motion.p variants={fadeUp} className="dark:text-neutral-300 mt-8 max-w-2xl">
         I build responsive, user-friendly full-stack web applications
         and analyze data to improve system performance and user experience. I
         focus on building reliable solutions while continuously improving my
@@ -41,7 +41,7 @@ export const Hero = () => {
         <motion.button
           whileTap={{ scale: 0.95 }}
           whileHover={{ scale: 1.05 }}
-          className="bg-neutral-300 text-black px-6 py-3 rounded-lg font-medium hover:bg-emerald-600 hover:border-2 hover:text-neutral-200 transition-colors"
+          className="bg-emerald-600 hover:bg-neutral-200 hover:border-emerald-600 dark:bg-neutral-300 text-black px-6 py-3 rounded-lg font-medium dark:hover:bg-emerald-600 hover:border-2 dark:hover:text-neutral-200 transition-colors"
         >
           Download CV
         </motion.button>

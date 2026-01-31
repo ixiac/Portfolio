@@ -43,7 +43,7 @@ export const Projects = () => {
           <motion.button
             whileTap={{ scale: 0.95 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-neutral-300 text-black px-6 py-3 rounded-lg font-medium hover:bg-emerald-600 hover:border-2 hover:text-neutral-200 transition-colors"
+            className="bg-emerald-600 hover:bg-neutral-200 hover:border-emerald-600 dark:bg-neutral-300 text-black px-6 py-3 rounded-lg font-medium dark:hover:bg-emerald-600 hover:border-2 dark:hover:text-neutral-200 transition-colors"
             onClick={() => (window.location.href = "https://github.com/ixiac")}
           >
             <span className="flex items-center gap-2">

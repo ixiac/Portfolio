@@ -33,7 +33,7 @@ export const ProjectCard = ({
         rel="noopener noreferrer"
         className="block relative overflow-hidden rounded-md group"
       >
-        <figure className="relative border-2 border-neutral-300 rounded-md overflow-hidden">
+        <figure className="relative border-2 border-neutral-400 dark:border-neutral-300 rounded-md overflow-hidden">
           <img
             src={imgSrc}
             alt={title}

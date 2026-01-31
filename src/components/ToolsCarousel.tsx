@@ -4,13 +4,19 @@ import { useEffect, useState } from "react";
 
 export const ToolsCarousel = ({ tools }: { tools: ToolsType[] }) => {
   const duplicatedTools = [...tools, ...tools, ...tools];
-  
+
   return (
-    <div className="overflow-hidden relative">
+    <div
+      className="overflow-hidden relative border-2 rounded-lg border-emerald-600 "
+      style={{
+        boxShadow:
+          "inset 0 6px 20px rgba(0, 0, 0, 0.35), inset 0 -6px 15px rgba(0, 0, 0, 0.25)",
+      }}
+    >
       <motion.div
         className="flex gap-8"
         animate={{
-          x: [0, -((tools.length * 120) + (tools.length * 32))],
+          x: [0, -(tools.length * 120 + tools.length * 32)],
         }}
         transition={{
           x: {
@@ -22,19 +28,27 @@ export const ToolsCarousel = ({ tools }: { tools: ToolsType[] }) => {
         }}
       >
         {duplicatedTools.map((tool, index) => (
-          <div
+          <motion.div
             key={`${tool.label}-${index}`}
-            className="flex-shrink-0 w-[120px] h-[120px] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center gap-3 p-4"
+            className="flex-shrink-0 w-[120px] h-[120px] flex flex-col items-center justify-center gap-3 p-4 cursor-pointer"
+            whileHover={{
+              scale: 1.25,
+              transition: {
+                type: "spring",
+                stiffness: 200,
+                damping: 10,
+              },
+            }}
           >
             <img
               src={tool.imgSrc}
               alt={tool.label}
               className="w-12 h-12 object-contain"
             />
-            <span className="text-sm font-medium text-neutral-300 text-center">
+            <span className="text-sm font-medium dark:text-neutral-300 text-center">
               {tool.label}
             </span>
-          </div>
+          </motion.div>
         ))}
       </motion.div>
     </div>
