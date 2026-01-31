@@ -70,8 +70,8 @@ export const Sidebar = () => {
                 href={link.link}
                 onClick={(e) => handleNavClick(e, link.link)}
                 className={cn(
-                  "gap-2 flex items-center hover:text-emerald-500 text-neutral-700 dark:text-neutral-300 transition-colors duration-200 text-base",
-                  active === link.link && "text-emerald-500 dark:text-emerald-500 font-semibold",
+                  "gap-2 flex items-center hover:text-emerald-500 dark:hover:text-emerald-500 text-neutral-700 dark:text-neutral-300 transition-colors duration-200 text-base",
+                  active === link.link && "text-emerald-500 dark:text-emerald-500 font-bold",
                 )}
               >
                 <Icon className="inline mr-2" size={16} />
@@ -91,7 +91,7 @@ export const Sidebar = () => {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 dark:text-neutral-300 hover: transition-colors duration-200 hover:text-emerald-500"
+                  className="p-2 dark:text-neutral-300 hover: transition-colors duration-200 hover:text-emerald-500 dark:hover:text-emerald-500"
                 >
                   <Icon className="size-4" />
                 </a>

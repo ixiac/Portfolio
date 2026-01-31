@@ -48,7 +48,7 @@ export const Profile = () => {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pl-0 p-2 dark:text-neutral-300 hover: transition-colors duration-200 hover:text-emerald-500"
+                  className="pl-0 p-2 dark:text-neutral-300 hover: transition-colors duration-200 hover:text-emerald-500 dark:hover:text-emerald-500"
                 >
                   <Icon className="size-4" />
                 </a>

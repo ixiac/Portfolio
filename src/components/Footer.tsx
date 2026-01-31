@@ -20,7 +20,7 @@ export const Footer = () => {
                                     href={social.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-2 dark:text-neutral-400 hover:text-emerald-500 transition-colors duration-200"
+                                    className="p-2 dark:text-neutral-400 hover:text-emerald-500 dark:hover:text-emerald-500 transition-colors duration-200"
                                     aria-label={social.label || `Social link ${i + 1}`}
                                 >
                                     <Icon className="size-5" />
