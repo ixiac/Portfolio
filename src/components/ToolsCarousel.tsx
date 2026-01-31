@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import type { ToolsType } from "@/types";
-import { useEffect, useState } from "react";
 
 export const ToolsCarousel = ({ tools }: { tools: ToolsType[] }) => {
   const duplicatedTools = [...tools, ...tools, ...tools];

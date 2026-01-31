@@ -39,14 +39,24 @@ export const About = () => {
       <motion.section variants={fadeUp} className="mt-6 max-w-2xl">
         <motion.button
           whileTap={{ scale: 0.95 }}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.02 }}
           onClick={() => {
             const contactSection = document.getElementById("contact");
             if (contactSection) {
-              contactSection.scrollIntoView({ behavior: "smooth" });
+              const lenis = (window as any).lenis;
+
+              if (lenis) {
+                lenis.scrollTo(contactSection, {
+                  offset: 0,
+                  duration: 1.2,
+                });
+              } else {
+                // Fallback to native smooth scroll
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              }
             }
           }}
-          className="bg-emerald-600 hover:bg-neutral-200 hover:border-emerald-600 dark:bg-neutral-300 text-black px-6 py-3 rounded-lg font-medium dark:hover:bg-emerald-600 hover:border-2 dark:hover:text-neutral-200 transition-colors"
+          className="bg-emerald-600 hover:bg-neutral-200 hover:border-emerald-600 dark:bg-neutral-300 text-black px-5 py-2.5 rounded-lg font-medium dark:hover:bg-emerald-600 hover:border-2 dark:hover:text-neutral-200 transition-colors"
         >
           <span>
             Contact Me <ArrowRight className="inline ml-2 mb-1" size={16} />

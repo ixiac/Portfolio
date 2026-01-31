@@ -22,13 +22,11 @@ export const Sidebar = () => {
     setActive(link);
     setOpen(false);
 
-    // Small delay to allow sheet to close
     setTimeout(() => {
       const targetId = link.replace("#", "");
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        // Get Lenis instance from window or use direct scroll
         const lenis = (window as any).lenis;
 
         if (lenis) {
@@ -73,7 +71,7 @@ export const Sidebar = () => {
                 onClick={(e) => handleNavClick(e, link.link)}
                 className={cn(
                   "gap-2 flex items-center hover:text-emerald-500 text-neutral-700 dark:text-neutral-300 transition-colors duration-200 text-base",
-                  active === link.link && "text-emerald-500",
+                  active === link.link && "text-emerald-500 dark:text-emerald-500 font-semibold",
                 )}
               >
                 <Icon className="inline mr-2" size={16} />
