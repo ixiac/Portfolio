@@ -15,34 +15,42 @@ export const About = () => {
     >
       <SectionHeader title="About Me" subtitle="My background and skills" />
 
-      <motion.p variants={fadeUp} className="mt-4 text-neutral-300">
+      <motion.p variants={fadeUp} className="mt-4 dark:text-neutral-300">
         I am an IT graduate from Batangas State University, specializing in
         Business Analytics. As a full-stack developer, I create web, mobile, and
         system applications, blending front-end design with back-end
         functionality.
       </motion.p>
 
-      <motion.p variants={fadeUp} className="mt-4 text-neutral-300">
+      <motion.p variants={fadeUp} className="mt-4 dark:text-neutral-300">
         I have hands-on experience developing full-stack projects, maintaining
         databases using MySQL, Firebase, and PostgreSQL, and applying data
         analytics to optimize system performance. I thrive in collaborative
         environments and also enjoy working independently.
       </motion.p>
 
-      <motion.p variants={fadeUp} className="mt-4 text-neutral-300">
+      <motion.p variants={fadeUp} className="mt-4 dark:text-neutral-300">
         I am open to work opportunities—whether remote, on-site, or hybrid—and
         eager to contribute my skills to dynamic teams and impactful projects.
         Flexible and adaptable, I’m ready to take on new challenges and
         continuously grow as a developer.
       </motion.p>
 
-            <motion.section variants={fadeUp} className="mt-6 max-w-2xl">
+      <motion.section variants={fadeUp} className="mt-6 max-w-2xl">
         <motion.button
           whileTap={{ scale: 0.95 }}
           whileHover={{ scale: 1.05 }}
-          className="bg-neutral-300 text-black px-6 py-3 rounded-lg font-medium hover:bg-emerald-600 hover:border-2 hover:text-neutral-200 transition-colors"
+          onClick={() => {
+            const contactSection = document.getElementById("contact");
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          className="bg-emerald-600 hover:bg-neutral-200 hover:border-emerald-600 dark:bg-neutral-300 text-black px-6 py-3 rounded-lg font-medium dark:hover:bg-emerald-600 hover:border-2 dark:hover:text-neutral-200 transition-colors"
         >
-          <span>Contact Me <ArrowRight className="inline ml-2 mb-1" size={16} /></span>
+          <span>
+            Contact Me <ArrowRight className="inline ml-2 mb-1" size={16} />
+          </span>
         </motion.button>
       </motion.section>
     </motion.section>
