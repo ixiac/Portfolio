@@ -6,7 +6,6 @@ import { Sidebar } from "@/components/Sidebar.tsx";
 import { Profile } from "@/components/Profile.tsx";
 import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/mode-toggle";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
