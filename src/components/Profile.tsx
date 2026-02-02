@@ -15,7 +15,7 @@ export const Profile = () => {
 
         <div className="flex justify-center border-0">
           <img
-            src="/avatar.jpg"
+            src="/bien.jpg"
             alt="Bien's Profile"
             className="lg:w-76 rounded-2xl object-cover dark:border-2 border-emerald-600"
           />
