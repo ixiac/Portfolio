@@ -4,12 +4,28 @@ A modern, responsive personal portfolio website built to showcase my projects, s
 
 Designed with performance, accessibility, and clean UI in mind.
 
-## Project Preview:
+## ✨ Portfolio Preview
+
 <p align="center">
+  <strong>Desktop View</strong><br /><br />
   <img 
     src="./public/preview/Portfolio%20Hero.png"
     width="800"
-    alt="Portfolio Hero Preview"
+    alt="Portfolio Desktop Preview"
+  />
+</p>
+
+<p align="center">
+  <strong>Mobile View</strong><br /><br />
+  <img 
+    src="./public/preview/Portfolio%20Mobile.png"
+    width="300"
+    alt="Portfolio Mobile Preview 1"
+  />
+  <img 
+    src="./public/preview/Portfolio%20Mobile 2.png"
+    width="300"
+    alt="Portfolio Mobile Preview 2"
   />
 </p>
 
