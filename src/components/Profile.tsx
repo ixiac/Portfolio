@@ -17,7 +17,7 @@ export const Profile = () => {
           <img
             src="/bien.jpg"
             alt="Bien's Profile"
-            className="lg:w-76 rounded-2xl object-cover dark:border-2 border-emerald-600"
+            className="lg:w-76 rounded-2xl object-cover dark:border-1 border-emerald-600"
           />
         </div>
 
