@@ -35,7 +35,6 @@ export const Sidebar = () => {
             duration: 1.2,
           });
         } else {
-          // Fallback to native smooth scroll
           targetElement.scrollIntoView({
             behavior: "smooth",
             block: "start",
