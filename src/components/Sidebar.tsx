@@ -9,10 +9,26 @@ import { Button } from "@/components/ui/button.tsx";
 import { MenuIcon } from "lucide-react";
 import { navLinks, socialLinks } from "@/constants";
 import { cn } from "@/lib/utils.ts";
+import { useEffect } from "react";
 
 export const Sidebar = () => {
   const [active, setActive] = useState("#hero");
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash || "#hero";
+      setActive(hash);
+    };
+
+    handleHashChange();
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -56,7 +72,10 @@ export const Sidebar = () => {
           <MenuIcon size={30} />
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-84 bg-neutral-300 border-emerald-600 dark:bg-neutral-800 py-6 pl-10">
+      <SheetContent
+        side="right"
+        className="w-84 bg-neutral-300 border-emerald-600 dark:bg-neutral-800 py-6 pl-10"
+      >
         <SheetTitle className="mb-4 text-lg font-semibold dark:text-neutral-300">
           Menu
         </SheetTitle>
@@ -69,8 +88,9 @@ export const Sidebar = () => {
                 href={link.link}
                 onClick={(e) => handleNavClick(e, link.link)}
                 className={cn(
-                  "gap-2 flex items-center hover:text-emerald-500 dark:hover:text-emerald-500 text-neutral-700 dark:text-neutral-300 transition-colors duration-200 text-base",
-                  active === link.link && "text-emerald-500 dark:text-emerald-500 font-bold",
+                  "gap-2 flex items-center hover:text-emerald-500 dark:hover:text-emerald-500 text-neutral-700 dark:text-neutral-300 text-base transition-all duration-400 ease-in-out",
+                  active === link.link &&
+                    "text-emerald-500 dark:text-emerald-500 font-bold text-lg transition-all duration-400 ease-in-out",
                 )}
               >
                 <Icon className="inline mr-2" size={16} />
@@ -90,7 +110,7 @@ export const Sidebar = () => {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 dark:text-neutral-300 hover: transition-colors duration-200 hover:text-emerald-500 dark:hover:text-emerald-500"
+                  className="p-2 dark:text-neutral-300 duration-200 hover:text-emerald-500 dark:hover:text-emerald-500 transition-all duration-400 ease-in-out hover:scale-115"
                 >
                   <Icon className="size-4" />
                 </a>

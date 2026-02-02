@@ -4,7 +4,7 @@ import { About } from "@/components/About.tsx";
 import { Projects } from "@/components/Projects.tsx";
 import { Resume } from "@/components/Resume.tsx";
 import { Contact } from "@/components/Contact.tsx";
-import Lenis  from "lenis";
+import Lenis from "lenis";
 
 function App() {
   useEffect(() => {
@@ -33,4 +33,5 @@ function App() {
     </main>
   );
 }
+
 export default App;
