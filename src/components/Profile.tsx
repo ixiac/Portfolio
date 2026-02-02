@@ -9,8 +9,8 @@ export const Profile = () => {
     >
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between gap-x-10">
-          <h1 className="text-2xl text-black dark:text-white font-bold">Bien Marlon</h1>
-          <p className="text-sm text-emerald-600">Developer</p>
+          <h1 className="text-xl text-black dark:text-white font-bold">Bien Marlon</h1>
+          <p className="text-sm text-emerald-600">Developer & Analyst</p>
         </div>
 
         <div className="flex justify-center border-0">
