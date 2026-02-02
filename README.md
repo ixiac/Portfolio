@@ -8,7 +8,7 @@ Designed with performance, accessibility, and clean UI in mind.
 
 <p align="center">
   <img 
-    src="./public/preview/Live%20Preview.png"
+    src="./public/preview/Live%20Preview.gif"
     width="1000"
     alt="Portfolio Live Preview"
   /><br /><br />
