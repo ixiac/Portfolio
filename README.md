@@ -18,7 +18,7 @@ Designed with performance, accessibility, and clean UI in mind.
 <p align="center">
   <img 
     src="./public/preview/Portfolio%20Hero.png"
-    width="400"
+    width="800"
     alt="Portfolio Desktop Preview"
     style="margin-right: 200px;"
   />
