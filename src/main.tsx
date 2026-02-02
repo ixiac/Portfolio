@@ -5,6 +5,7 @@ import App from "@/App.tsx";
 import { Sidebar } from "@/components/Sidebar.tsx";
 import { Profile } from "@/components/Profile.tsx";
 import { Footer } from "@/components/Footer";
+import { ScrollButton } from "@/components/scroll-button";
 import { ThemeProvider } from "@/components/theme-provider";
 
 createRoot(document.getElementById("root")!).render(
@@ -17,6 +18,7 @@ createRoot(document.getElementById("root")!).render(
           <App />
         </div>
         <Footer />
+        <ScrollButton />
       </div>
     </ThemeProvider>
   </StrictMode>,
