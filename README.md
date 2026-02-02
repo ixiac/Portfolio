@@ -24,7 +24,7 @@ Designed with performance, accessibility, and clean UI in mind.
   />
   <img 
     src="./public/preview//Portfolio%20Mobile%202.png"
-    width="300"
+    width="300" height="400"
     alt="Portfolio Mobile Preview"
   /><br /><br />
   <strong>Desktop & Mobile View</strong><br /><br />
