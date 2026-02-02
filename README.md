@@ -20,7 +20,7 @@ Designed with performance, accessibility, and clean UI in mind.
     src="./public/preview/Portfolio%20Mobile.png"
     width="400"
     alt="Portfolio Mobile Preview 1"
-    style="margin-right: 100px;"
+    style="margin-right: 200px;"
   />
   <img 
     src="./public/preview//Portfolio%20Mobile%202.png"
