@@ -8,26 +8,26 @@ Designed with performance, accessibility, and clean UI in mind.
 
 <p align="center">
   <img 
-    src="./public/preview/Portfolio%20Hero.png"
+    src="./public/preview/Live%20Preview.png"
     width="1000"
-    alt="Portfolio Desktop Preview"
+    alt="Portfolio Live Preview"
   /><br /><br />
   <strong>Desktop View</strong><br /><br />
 </p>
 
 <p align="center">
   <img 
-    src="./public/preview/Portfolio%20Mobile.png"
+    src="./public/preview/Portfolio%20Hero.png"
     width="400"
-    alt="Portfolio Mobile Preview 1"
+    alt="Portfolio Desktop Preview"
     style="margin-right: 200px;"
   />
   <img 
     src="./public/preview//Portfolio%20Mobile%202.png"
     width="400"
-    alt="Portfolio Mobile Preview 2"
+    alt="Portfolio Mobile Preview"
   /><br /><br />
-  <strong>Mobile View</strong><br /><br />
+  <strong>Desktop & Mobile View</strong><br /><br />
 </p>
 
 ## 🚀 Tech Stack
