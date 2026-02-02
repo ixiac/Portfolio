@@ -1,5 +1,4 @@
 "use client"
-
 import * as React from "react"
 import { Switch } from "@/components/ui/switch"
 import { Sun, Moon } from "lucide-react"
@@ -20,11 +19,10 @@ export function ModeToggle() {
 
   return (
     <div className="flex items-center gap-2">
-
       <div className="relative h-5 w-5">
         <Sun
           className={cn(
-            "absolute h-5 w-5 transition-transform transition-opacity duration-300 ease-in-out",
+            "absolute h-5 w-5 transition-all duration-300 ease-in-out",
             isDark
               ? "scale-0 rotate-90 opacity-0"
               : "scale-100 rotate-0 opacity-100 text-yellow-500"
@@ -32,15 +30,13 @@ export function ModeToggle() {
         />
         <Moon
           className={cn(
-            "absolute h-5 w-5 transition-transform transition-opacity duration-300 ease-in-out",
+            "absolute h-5 w-5 transition-all duration-300 ease-in-out",
             isDark
               ? "scale-100 rotate-0 opacity-100 text-blue-400"
               : "scale-0 -rotate-90 opacity-0"
           )}
         />
       </div>
-
-
       <Switch
         checked={isDark}
         onCheckedChange={(checked) =>
