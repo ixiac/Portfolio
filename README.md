@@ -11,7 +11,7 @@ Designed with performance, accessibility, and clean UI in mind.
     src="./public/preview/Portfolio%20Hero.png"
     width="1000"
     alt="Portfolio Desktop Preview"
-  />
+  /><br /><br />
   <strong>Desktop View</strong><br /><br />
 </p>
 
@@ -26,7 +26,7 @@ Designed with performance, accessibility, and clean UI in mind.
     src="./public/preview//Portfolio%20Mobile%202.png"
     width="400"
     alt="Portfolio Mobile Preview 2"
-  />
+  /><br /><br />
   <strong>Mobile View</strong><br /><br />
 </p>
 
