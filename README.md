@@ -5,8 +5,13 @@ A modern, responsive personal portfolio website built to showcase my projects, s
 Designed with performance, accessibility, and clean UI in mind.
 
 ## Project Preview:
-![Preview](./public/preview/Portfolio Hero.png
-**Desktop Version**
+<p align="center">
+  <img 
+    src="./public/preview/Portfolio%20Hero.png"
+    width="800"
+    alt="Portfolio Hero Preview"
+  />
+</p>
 
 ## 🚀 Tech Stack
 
