@@ -10,7 +10,7 @@ Designed with performance, accessibility, and clean UI in mind.
   <strong>Desktop View</strong><br /><br />
   <img 
     src="./public/preview/Portfolio%20Hero.png"
-    width="800"
+    width="1000"
     alt="Portfolio Desktop Preview"
   />
 </p>
@@ -18,13 +18,14 @@ Designed with performance, accessibility, and clean UI in mind.
 <p align="center">
   <strong>Mobile View</strong><br /><br />
   <img 
-    src="./public/preview/Portfolio%20Mobile.png"
-    width="300"
+    src="./public/preview/mobile-1.png"
+    width="400"
     alt="Portfolio Mobile Preview 1"
+    style="margin-right: 20px;"
   />
   <img 
-    src="./public/preview/Portfolio%20Mobile 2.png"
-    width="300"
+    src="./public/preview/mobile-2.png"
+    width="400"
     alt="Portfolio Mobile Preview 2"
   />
 </p>
