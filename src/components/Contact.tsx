@@ -58,7 +58,7 @@ export const Contact = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="mt-4 dark:text-neutral-300 mb-12"
+          className="mt-4 dark:text-neutral-300 mb-20"
         >
           Have a project in mind or want to collaborate? Feel free to reach out!
         </motion.p>

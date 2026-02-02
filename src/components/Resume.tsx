@@ -12,7 +12,7 @@ export const Resume = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={staggerContainer(0)}
-      className="mt-30 scroll-mt-10"
+      className="mt-30 scroll-mt-10 mb-20"
       id="resume"
     >
       <SectionHeader

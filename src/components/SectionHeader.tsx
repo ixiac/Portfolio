@@ -13,10 +13,10 @@ export const SectionHeader = ({
     <>
       <motion.p
         variants={fadeUp}
-        className="flex items-center justify-center py-1 gap-2 w-42 "
+        className="flex items-center justify-center py-1 gap-2 w-42 mb-5"
       >
-        <SparkleIcon size={15} className="font-medium dark:text-white mt-4" />{" "}
-        <span className="font-semibold dark:text-white mt-4">{title}</span>
+        <SparkleIcon size={20} className="dark:text-white mt-4" />
+        <span className="font-semibold text-lg dark:text-white mt-4">{title}</span>
       </motion.p>
 
       <motion.h2 variants={fadeUp}>

@@ -24,15 +24,15 @@ export const Hero = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer(0)}
-        className="pt-20 mb-60"
+        className="pt-20 mb-20"
         id="hero"
       >
         <motion.p
           variants={fadeUp}
-          className="flex items-center justify-center py-1 gap-2 w-42"
+          className="flex items-center justify-center py-1 gap-2 w-42 ms-4"
         >
-          <SparkleIcon size={15} className="font-medium dark:text-white" />
-          <span className="font-semibold dark:text-white">Introduction</span>
+          <SparkleIcon size={20} className="dark:text-white mt-4" />
+          <span className="font-semibold text-lg dark:text-white mt-4">Introduction</span>
         </motion.p>
         <motion.h1
           variants={fadeUp}
