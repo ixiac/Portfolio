@@ -12,19 +12,19 @@ Designed with performance, accessibility, and clean UI in mind.
     width="1000"
     alt="Portfolio Live Preview"
   /><br /><br />
-  <strong>Desktop View</strong><br /><br />
+  <strong>Live Preview</strong><br /><br />
 </p>
 
 <p align="center">
   <img 
     src="./public/preview/Portfolio%20Hero.png"
-    width="800"
+    width="600"
     alt="Portfolio Desktop Preview"
-    style="margin-right: 200px;"
+    style="margin-right: 100px;"
   />
   <img 
     src="./public/preview//Portfolio%20Mobile%202.png"
-    width="400"
+    width="300"
     alt="Portfolio Mobile Preview"
   /><br /><br />
   <strong>Desktop & Mobile View</strong><br /><br />
