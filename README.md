@@ -18,13 +18,13 @@ Designed with performance, accessibility, and clean UI in mind.
 <p align="center">
   <strong>Mobile View</strong><br /><br />
   <img 
-    src="./public/preview/mobile-1.png"
+    src="./public/preview/Portfolio%20Mobile.png"
     width="300"
     alt="Portfolio Mobile Preview 1"
     style="margin-right: 20px;"
   />
   <img 
-    src="./public/preview/mobile-2.png"
+    src="./public/preview//Portfolio%20Mobile%202.png"
     width="300"
     alt="Portfolio Mobile Preview 2"
   />
