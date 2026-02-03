@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Mail, MapPin, Phone, Send, MessageSquare, User } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import emailjs from '@emailjs/browser';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -38,14 +39,36 @@ export const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Bien Marlon Maranan',
+        },
+        publicKey
+      );
+
       setIsSubmitting(false);
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
 
       setTimeout(() => setSubmitStatus("idle"), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setIsSubmitting(false);
+      setSubmitStatus("error");
+
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    }
   };
 
   return (
