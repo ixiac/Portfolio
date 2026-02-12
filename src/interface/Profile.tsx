@@ -4,11 +4,11 @@ import { Tilt } from "@/components/ui/tilt";
 
 export const Profile = () => {
   return (
-    <Tilt rotationFactor={1.0} isRevese>
-      <aside
-        className="max-w-3xl border m-6 border-1 dark:border-2 border-emerald-600 bg-neutral-300 dark:border-neutral-600 dark:bg-neutral-800 text-neutral-700 dark:text-white p-6
+    <aside
+      className="max-w-3xl border m-6 border-1 dark:border-2 border-emerald-600 bg-neutral-300 dark:border-neutral-600 dark:bg-neutral-800 text-neutral-700 dark:text-white p-6
     rounded-lg lg:sticky lg:left-0 lg:top-6 lg:self-start lg:w-96 mt-13"
-      >
+    >
+      <Tilt rotationFactor={1.0} isRevese>
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between gap-x-10">
             <h1 className="text-xl text-black dark:text-white font-bold">
@@ -66,7 +66,7 @@ export const Profile = () => {
             </div>
           </div>
         </div>
-      </aside>
-    </Tilt>
+      </Tilt>
+    </aside>
   );
 };
