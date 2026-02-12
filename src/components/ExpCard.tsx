@@ -9,7 +9,7 @@ export const ExpCard = ({ item }: { item: ExperienceType }) => {
         {" "}
       </div>
 
-      <span className="dark:text-neutral-300 lining-nums group-hover:text-emerald-600 transition duration-300">
+      <span className="dark:text-neutral-300 lining-nums group-hover:text-emerald-600 dark:group-hover:text-emerald-600 transition duration-300">
         {item.year}
       </span>
 
