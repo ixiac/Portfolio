@@ -131,55 +131,67 @@ const experience: ExperienceType[] = [
 const tools: ToolsType[] = [
   {
     label: "Figma",
-    imgSrc: "/tools/figma.svg",
+    iconName: "figma",
   },
   {
     label: "HTML5",
-    imgSrc: "/tools/html5.svg",
+    iconName: "html5",
   },
   {
     label: "CSS3",
-    imgSrc: "/tools/css3.svg",
+    iconName: "css3",
   },
   {
     label: "Tailwind CSS",
-    imgSrc: "/tools/tailwindcss.svg",
+    iconName: "tailwindcss",
   },
   {
     label: "Bootstrap",
-    imgSrc: "/tools/bootstrap.svg",
+    iconName: "bootstrap5",
   },
   {
     label: "React",
-    imgSrc: "/tools/react.svg",
+    iconName: "react",
+  },
+  {
+    label: "TypeScript",
+    iconName: "typescript",
   },
   {
     label: "JavaScript",
-    imgSrc: "/tools/javascript.svg",
+    iconName: "js",
   },
   {
     label: "Node.js",
-    imgSrc: "/tools/nodejs.svg",
+    iconName: "nodejs",
   },
   {
     label: "PHP",
-    imgSrc: "/tools/php.svg",
+    iconName: "php",
   },
   {
     label: "Laravel",
-    imgSrc: "/tools/laravel.svg",
+    iconName: "laravel",
+  },
+  {
+    label: "Dart",
+    iconName: "dart",
+  },
+  {
+    label: "Flutter",
+    iconName: "flutter",
   },
   {
     label: "MySQL",
-    imgSrc: "/tools/mysql.svg",
+    iconName: "mysql",
   },
   {
     label: "Firebase",
-    imgSrc: "/tools/firebase.svg",
+    iconName: "firebase",
   },
   {
     label: "PostgreSQL",
-    imgSrc: "/tools/postgre.svg",
+    iconName: "postgresql",
   },
 ];
 

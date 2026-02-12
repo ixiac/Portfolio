@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import StackIcon from "tech-stack-icons";
 import type { ToolsType } from "@/types";
 
 export const ToolsCarousel = ({ tools }: { tools: ToolsType[] }) => {
@@ -6,7 +7,7 @@ export const ToolsCarousel = ({ tools }: { tools: ToolsType[] }) => {
 
   return (
     <div
-      className="overflow-hidden relative border-2 rounded-lg border-emerald-600 "
+      className="overflow-hidden relative border-2 rounded-lg border-emerald-600"
       style={{
         boxShadow:
           "inset 0 6px 20px rgba(0, 0, 0, 0.35), inset 0 -6px 15px rgba(0, 0, 0, 0.25)",
@@ -26,29 +27,27 @@ export const ToolsCarousel = ({ tools }: { tools: ToolsType[] }) => {
           },
         }}
       >
-        {duplicatedTools.map((tool, index) => (
-          <motion.div
-            key={`${tool.label}-${index}`}
-            className="flex-shrink-0 w-[120px] h-[120px] flex flex-col items-center justify-center gap-3 p-4 cursor-pointer"
-            whileHover={{
-              scale: 1.25,
-              transition: {
-                type: "spring",
-                stiffness: 200,
-                damping: 10,
-              },
-            }}
-          >
-            <img
-              src={tool.imgSrc}
-              alt={tool.label}
-              className="w-12 h-12 object-contain"
-            />
-            <span className="text-sm font-medium dark:text-neutral-300 text-center">
-              {tool.label}
-            </span>
-          </motion.div>
-        ))}
+        {duplicatedTools.map((tool, index) => {
+          return (
+            <motion.div
+              key={`${tool.label}-${index}`}
+              className="flex-shrink-0 w-[120px] h-[120px] flex flex-col items-center justify-center gap-3 p-4 cursor-pointer"
+              whileHover={{
+                scale: 1.25,
+                transition: {
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 10,
+                },
+              }}
+            >
+              <StackIcon name={tool.iconName} className="w-12 h-12" />
+              <span className="text-sm font-medium dark:text-neutral-300 text-center">
+                {tool.label}
+              </span>
+            </motion.div>
+          );
+        })}
       </motion.div>
     </div>
   );

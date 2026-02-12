@@ -15,7 +15,7 @@ export type ExperienceType = {
 };
 
 export type ToolsType = {
-  imgSrc: string;
+  iconName: string;
   label: string;
 };
 
