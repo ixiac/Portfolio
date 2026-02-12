@@ -18,7 +18,7 @@ export const Projects = () => {
       <SectionHeader title="Projects" subtitle="My works" />
 
       <motion.div
-        className="grid md:grid-cols-2 gap-8 mt-10"
+        className="grid md:grid-cols-2 gap-8 mt-10 max-w-5xl"
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.3 }}

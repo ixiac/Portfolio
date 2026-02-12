@@ -15,21 +15,21 @@ export const About = () => {
     >
       <SectionHeader title="About Me" subtitle="My background and skills" />
 
-      <motion.p variants={fadeUp} className="mt-4 dark:text-neutral-300">
+      <motion.p variants={fadeUp} className="mt-4 dark:text-neutral-300 max-w-5xl">
         I am an IT graduate from Batangas State University, specializing in
         Business Analytics. As a full-stack developer, I create web, mobile, and
         system applications, blending front-end design with back-end
         functionality.
       </motion.p>
 
-      <motion.p variants={fadeUp} className="mt-4 dark:text-neutral-300">
+      <motion.p variants={fadeUp} className="mt-4 dark:text-neutral-300 max-w-5xl">
         I have hands-on experience developing full-stack projects, maintaining
         databases using MySQL, Firebase, and PostgreSQL, and applying data
         analytics to optimize system performance. I thrive in collaborative
         environments and also enjoy working independently.
       </motion.p>
 
-      <motion.p variants={fadeUp} className="mt-4 dark:text-neutral-300">
+      <motion.p variants={fadeUp} className="mt-4 dark:text-neutral-300 max-w-5xl">
         I am open to work opportunities—whether remote, on-site, or hybrid—and
         eager to contribute my skills to dynamic teams and impactful projects.
         Flexible and adaptable, I’m ready to take on new challenges and

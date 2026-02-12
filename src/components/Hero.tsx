@@ -2,16 +2,17 @@ import { motion } from "motion/react";
 import { fadeUp, staggerContainer } from "@/constants/animations";
 import { SparkleIcon, Download, Eye, X } from "lucide-react";
 import { useState } from "react";
+import { TextShimmer } from "@/components/ui/text-shimmer";
 
 export const Hero = () => {
   const [showPDF, setShowPDF] = useState(false);
-  
-  const pdfPath = '/Bien Marlon Q. Maranan CV.pdf';
+
+  const pdfPath = "/Bien Marlon Q. Maranan CV.pdf";
 
   const handleDownload = () => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = pdfPath;
-    link.download = 'Bien Marlon Maranan - CV.pdf';
+    link.download = "Bien Marlon Maranan - CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -32,21 +33,29 @@ export const Hero = () => {
           className="flex items-center justify-center py-1 gap-2 w-42 ms-4"
         >
           <SparkleIcon size={20} className="dark:text-white mt-4" />
-          <span className="font-semibold text-lg dark:text-white mt-4">Introduction</span>
+          <span className="font-semibold text-lg dark:text-white mt-4">
+            Introduction
+          </span>
         </motion.p>
         <motion.h1
           variants={fadeUp}
-          className="dark:text-neutral-200 text-4xl md:text-4xl lg:text-6xl font-medium capitalize mt-4 max-w-3xl md:leading-16"
+          className="dark:text-neutral-200 text-5xl md:text-5xl lg:text-6xl font-medium capitalize mt-4 max-w-4xl md:leading-16"
         >
           I'm{" "}
-          <span className="text-emerald-500 font-semibold">
+          <TextShimmer
+            duration={3}
+            className="font-bold [--base-color:var(--color-emerald-600)] [--base-gradient-color:var(--color-emerald-200)] dark:[--base-color:var(--color-emerald-500)] dark:[--base-gradient-color:var(--color-emerald-200)]"
+          >
             Bien Marlon Maranan
-          </span>
+          </TextShimmer>
           , a Full-Stack Web Developer & Data Analyst.
         </motion.h1>
-        <motion.p variants={fadeUp} className="dark:text-neutral-300 mt-8 max-w-2xl">
-          I build responsive, user-friendly full-stack web applications
-          and analyze data to improve system performance and user experience. I
+        <motion.p
+          variants={fadeUp}
+          className="dark:text-neutral-300 mt-8 max-w-2xl"
+        >
+          I build responsive, user-friendly full-stack web applications and
+          analyze data to improve system performance and user experience. I
           focus on building reliable solutions while continuously improving my
           skills and adapting to new technologies.
         </motion.p>
@@ -73,7 +82,7 @@ export const Hero = () => {
       </motion.section>
 
       {showPDF && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -82,7 +91,7 @@ export const Hero = () => {
             if (e.target === e.currentTarget) setShowPDF(false);
           }}
         >
-          <motion.div 
+          <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
@@ -109,7 +118,7 @@ export const Hero = () => {
                 </button>
               </div>
             </div>
-            
+
             <div className="flex-1 p-4 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-neutral-800 dark:to-neutral-900 rounded-b-2xl overflow-hidden">
               <div className="w-full h-full rounded-xl overflow-hidden shadow-2xl ring-1 ring-gray-200/50 dark:ring-neutral-700/50">
                 <iframe
