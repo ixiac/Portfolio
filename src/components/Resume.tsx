@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
 import { fadeUp, staggerContainer } from "@/constants/animations";
-import { SectionHeader } from "@/components/SectionHeader";
+import { SectionHeader } from "@/components/contents/SectionHeader";
 import { education, experience, tools } from "@/constants";
-import { ExpCard } from "@/components/ExpCard";
-import { ToolsCarousel } from "@/components/ToolsCarousel";
+import { ExpCard } from "@/components/contents/ExpCard";
+import { ToolsCarousel } from "@/components/contents/ToolsCarousel";
 
 export const Resume = () => {
   return (

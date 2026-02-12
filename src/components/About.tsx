@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { fadeUp, staggerContainer } from "@/constants/animations";
-import { SectionHeader } from "@/components/SectionHeader";
+import { SectionHeader } from "@/components/contents/SectionHeader";
 import { ArrowRight } from "lucide-react";
 
 export const About = () => {

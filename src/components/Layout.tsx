@@ -4,7 +4,7 @@ import Lenis from "lenis";
 import { Sidebar } from "@/components/Sidebar";
 import { Profile } from "@/components/Profile";
 import { Footer } from "@/components/Footer";
-import { ScrollButton } from "@/components/scroll-button";
+import { ScrollButton } from "@/components/contents/scroll-button";
 import App from "@/App";
 
 export const Layout = () => {

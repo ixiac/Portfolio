@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Mail, MapPin, Phone, Send, MessageSquare, User } from "lucide-react";
-import { SectionHeader } from "@/components/SectionHeader";
+import { SectionHeader } from "@/components/contents/SectionHeader";
 import emailjs from "@emailjs/browser";
 import {
   GoogleReCaptchaProvider,

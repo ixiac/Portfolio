@@ -1,5 +1,5 @@
 import { socialLinks } from "@/constants";
-import { ModeToggle } from "@/components/mode-toggle";
+import { ModeToggle } from "@/components/contents/mode-toggle";
 
 export const Profile = () => {
   return (

@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { fadeUp, staggerContainer } from "@/constants/animations";
-import { SectionHeader } from "@/components/SectionHeader";
-import { ProjectCard } from "@/components/ProjectCard";
+import { SectionHeader } from "@/components/contents/SectionHeader";
+import { ProjectCard } from "@/components/contents/ProjectCard";
 import { projectsData } from "@/constants";
 import { ArrowRight, Github } from "lucide-react";
 
