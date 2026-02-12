@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Mail, MapPin, Phone, Send, MessageSquare, User } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
+import {
+  GoogleReCaptchaProvider,
+  useGoogleReCaptcha,
+} from "react-google-recaptcha-v3";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -13,7 +17,7 @@ const fadeUp = {
 
 type TabType = "contact" | "message";
 
-export const Contact = () => {
+export const ContactContent = () => {
   const [activeTab, setActiveTab] = useState<TabType>("message");
   const [formData, setFormData] = useState({
     name: "",
@@ -34,12 +38,23 @@ export const Contact = () => {
       [e.target.name]: e.target.value,
     });
   };
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
+      if (!executeRecaptcha) {
+        throw new Error("reCAPTCHA is not initialized");
+      }
+
+      const token = await executeRecaptcha("contact_form");
+
+      if (!token) {
+        throw new Error("reCAPTCHA verification failed");
+      }
+
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -52,9 +67,9 @@ export const Contact = () => {
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_name: 'Bien Marlon Maranan',
+          to_name: "Bien Marlon Maranan",
         },
-        publicKey
+        publicKey,
       );
 
       setIsSubmitting(false);
@@ -63,7 +78,7 @@ export const Contact = () => {
 
       setTimeout(() => setSubmitStatus("idle"), 5000);
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error("EmailJS Error:", error);
       setIsSubmitting(false);
       setSubmitStatus("error");
 
@@ -315,5 +330,15 @@ export const Contact = () => {
         </div>
       </div>
     </section>
+  );
+};
+
+export const Contact = () => {
+  const recaptchaSiteKey = import.meta.env.VITE_CAPTCHA_SITE_KEY;
+
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={recaptchaSiteKey}>
+      <ContactContent />
+    </GoogleReCaptchaProvider>
   );
 };

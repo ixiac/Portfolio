@@ -66,7 +66,7 @@ export const ScrollButton = () => {
                         transition: { duration: 0.2 }
                     }}
                     whileTap={{ scale: 0.9 }}
-                    className="fixed bottom-8 right-4 z-50 text-white border-neutral-400 dark:border-neutral-600 border-2 hover:border-emerald-600 dark:hover:border-neutral-600 
+                    className="fixed bottom-20 right-4 z-50 text-white border-neutral-400 dark:border-neutral-600 border-2 hover:border-emerald-600 dark:hover:border-neutral-600 
                 bg-emerald-600 dark:hover:bg-emerald-600 dark:bg-neutral-800 p-3 hover:text-emerald-600 dark:hover:text-primary cursor-pointer rounded-full shadow-lg"
                     aria-label="Scroll to top"
                 >
