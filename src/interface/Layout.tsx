@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import Lenis from "lenis";
-import { Sidebar } from "@/components/Sidebar";
-import { Profile } from "@/components/Profile";
-import { Footer } from "@/components/Footer";
+import { Sidebar } from "@/interface/Sidebar";
+import { Profile } from "@/interface/Profile";
+import { Footer } from "@/interface/Footer";
 import { ScrollButton } from "@/components/contents/scroll-button";
 import App from "@/App";
 
