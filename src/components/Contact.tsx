@@ -42,18 +42,13 @@ export const ContactContent = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Check if reCAPTCHA is ready before proceeding
-    if (!executeRecaptcha) {
-      console.error("reCAPTCHA not ready yet");
-      setSubmitStatus("error");
-      setTimeout(() => setSubmitStatus("idle"), 5000);
-      return;
-    }
-    
     setIsSubmitting(true);
 
     try {
+      if (!executeRecaptcha) {
+        throw new Error("reCAPTCHA is not initialized");
+      }
+
       const token = await executeRecaptcha("contact_form");
 
       if (!token) {
@@ -259,7 +254,7 @@ export const ContactContent = () => {
                 <div className="flex justify-center">
                   <motion.button
                     type="submit"
-                    disabled={isSubmitting || !executeRecaptcha}
+                    disabled={isSubmitting}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="bg-emerald-600 px-6 sm:px-8 py-2.5 sm:py-3 hover:bg-emerald-700 disabled:bg-neutral-700 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors duration-300 text-sm sm:text-base w-full sm:w-auto"
