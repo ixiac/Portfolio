@@ -1,6 +1,7 @@
 import { socialLinks } from "@/constants";
 import { ModeToggle } from "@/components/contents/mode-toggle";
 import { Tilt } from "@/components/ui/tilt";
+import { BorderTrail } from "@/components/ui/border-trail";
 
 export const Profile = () => {
   return (
@@ -17,12 +18,22 @@ export const Profile = () => {
             <p className="text-sm text-emerald-600">Developer & Analyst</p>
           </div>
 
-          <div className="flex justify-center border-0">
-            <img
-              src="/bien.jpg"
-              alt="Bien's Profile"
-              className="lg:w-76 rounded-2xl object-cover dark:border-1 border-emerald-600"
-            />
+          <div className="flex justify-center">
+            <div className="relative rounded-2xl lg:w-76 lg:h-76">
+              <BorderTrail
+                size={300} // slightly larger than image
+                style={{
+                  boxShadow:
+                    "0px 0px 40px 15px rgb(16 185 129 / 40%), 0 0 80px 30px rgb(16 185 129 / 30%)",
+                }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl"
+              />
+              <img
+                src="/bien.jpg"
+                alt="Bien's Profile"
+                className="relative z-10 w-full h-full rounded-2xl object-cover"
+              />
+            </div>
           </div>
 
           <div className="mt-2 flex flex-col gap-2">
