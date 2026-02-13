@@ -87,7 +87,7 @@ export const ContactContent = () => {
   };
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-12 sm:py-16 md:py-20">
       <div className="container mx-auto px-4 max-w-6xl">
         <SectionHeader title="Contact" subtitle="Get in touch with me" />
 
@@ -96,7 +96,7 @@ export const ContactContent = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="mt-4 dark:text-neutral-300 mb-20"
+          className="mt-4 dark:text-neutral-300 mb-12 sm:mb-16 md:mb-20 text-center sm:text-left"
         >
           Have a project in mind or want to collaborate? Feel free to reach out!
         </motion.p>
@@ -107,11 +107,11 @@ export const ContactContent = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
-            className="flex gap-1 mb-0 ml-2"
+            className="flex gap-1 mb-0 ml-0 sm:ml-2 overflow-x-auto"
           >
             <button
               onClick={() => setActiveTab("message")}
-              className={`relative flex items-center gap-2 px-6 py-3 font-medium transition-all duration-300 rounded-t-xl ${
+              className={`relative flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 font-medium transition-all duration-300 rounded-t-xl text-sm sm:text-base whitespace-nowrap ${
                 activeTab === "message"
                   ? "dark:bg-neutral-800 text-emerald-600 bg-neutral-300 z-10"
                   : "dark:bg-neutral-900 dark:text-neutral-400 hover:text-neutral-200"
@@ -121,12 +121,13 @@ export const ContactContent = () => {
                   "path('M 20 0 L calc(100% - 20) 0 Q calc(100% - 10) 0 calc(100%) 10 L 100% 100% L 0 100% L 0 10 Q 0 0 10 0 Z')",
               }}
             >
-              <MessageSquare className="w-5 h-5" />
-              Send Message
+              <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">Send Message</span>
+              <span className="sm:hidden">Message</span>
             </button>
             <button
               onClick={() => setActiveTab("contact")}
-              className={`relative flex items-center gap-2 px-6 py-3 font-medium transition-all duration-300 rounded-t-xl ${
+              className={`relative flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 font-medium transition-all duration-300 rounded-t-xl text-sm sm:text-base whitespace-nowrap ${
                 activeTab === "contact"
                   ? "dark:bg-neutral-800 text-emerald-600 bg-neutral-300 z-10"
                   : "dark:bg-neutral-900 dark:text-neutral-400 hover:text-neutral-200"
@@ -136,12 +137,13 @@ export const ContactContent = () => {
                   "path('M 20 0 L calc(100% - 20) 0 Q calc(100% - 10) 0 calc(100%) 10 L 100% 100% L 0 100% L 0 10 Q 0 0 10 0 Z')",
               }}
             >
-              <User className="w-5 h-5" />
-              Contact Info
+              <User className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">Contact Info</span>
+              <span className="sm:hidden">Info</span>
             </button>
           </motion.div>
 
-          <div className="dark:bg-neutral-800 bg-neutral-300 text-neutral-700 rounded-lg p-8">
+          <div className="dark:bg-neutral-800 bg-neutral-300 text-neutral-700 rounded-lg p-4 sm:p-6 md:p-8">
             {activeTab === "message" && (
               <motion.form
                 key="message"
@@ -151,7 +153,7 @@ export const ContactContent = () => {
                 transition={{ duration: 0.3 }}
                 onSubmit={handleSubmit}
               >
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                   <div>
                     <label
                       htmlFor="name"
@@ -166,7 +168,7 @@ export const ContactContent = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 dark:bg-neutral-900 border-2 dark:border-neutral-700 border-neutral-500 rounded-lg dark:text-neutral-200 focus:outline-none focus:border-emerald-600 dark:focus:border-emerald-600 transition-colors duration-300"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 dark:bg-neutral-900 bg-white border-2 dark:border-neutral-700 border-neutral-500 rounded-lg dark:text-neutral-200 focus:outline-none focus:border-emerald-600 dark:focus:border-emerald-600 transition-colors duration-300 text-sm sm:text-base"
                       placeholder="Enter your name"
                     />
                   </div>
@@ -185,7 +187,7 @@ export const ContactContent = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 dark:bg-neutral-900 border-2 dark:border-neutral-700 border-neutral-500 rounded-lg dark:text-neutral-200 focus:outline-none focus:border-emerald-600 dark:focus:border-emerald-600 transition-colors duration-300"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 dark:bg-neutral-900 bg-white border-2 dark:border-neutral-700 border-neutral-500 rounded-lg dark:text-neutral-200 focus:outline-none focus:border-emerald-600 dark:focus:border-emerald-600 transition-colors duration-300 text-sm sm:text-base"
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -204,7 +206,7 @@ export const ContactContent = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 dark:bg-neutral-900 border-2 dark:border-neutral-700 border-neutral-500 rounded-lg dark:text-neutral-200 focus:outline-none focus:border-emerald-600 dark:focus:border-emerald-600 transition-colors duration-300"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 dark:bg-neutral-900 bg-white border-2 dark:border-neutral-700 border-neutral-500 rounded-lg dark:text-neutral-200 focus:outline-none focus:border-emerald-600 dark:focus:border-emerald-600 transition-colors duration-300 text-sm sm:text-base"
                       placeholder="Enter the subject"
                     />
                   </div>
@@ -223,7 +225,7 @@ export const ContactContent = () => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 dark:bg-neutral-900 border-2 dark:border-neutral-700 border-neutral-500 rounded-lg dark:text-neutral-200 focus:outline-none focus:border-emerald-600 dark:focus:border-emerald-600 transition-colors duration-300 resize-none"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 dark:bg-neutral-900 bg-white border-2 dark:border-neutral-700 border-neutral-500 rounded-lg dark:text-neutral-200 focus:outline-none focus:border-emerald-600 dark:focus:border-emerald-600 transition-colors duration-300 resize-none text-sm sm:text-base"
                       placeholder="Enter your message here..."
                     />
                   </div>
@@ -233,7 +235,7 @@ export const ContactContent = () => {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mb-6 p-4 bg-emerald-600/20 border border-emerald-600 rounded-lg text-emerald-600 text-center"
+                    className="mb-4 sm:mb-6 p-3 sm:p-4 bg-emerald-600/20 border border-emerald-600 rounded-lg text-emerald-600 text-center text-sm sm:text-base"
                   >
                     Message sent successfully! I'll get back to you soon.
                   </motion.div>
@@ -243,7 +245,7 @@ export const ContactContent = () => {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mb-6 p-4 bg-red-600/20 border border-red-600 rounded-lg text-red-600 text-center"
+                    className="mb-4 sm:mb-6 p-3 sm:p-4 bg-red-600/20 border border-red-600 rounded-lg text-red-600 text-center text-sm sm:text-base"
                   >
                     Something went wrong. Please try again.
                   </motion.div>
@@ -255,17 +257,17 @@ export const ContactContent = () => {
                     disabled={isSubmitting}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-emerald-600 px-8 py-3 hover:bg-emerald-700 disabled:bg-neutral-700 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors duration-300"
+                    className="bg-emerald-600 px-6 sm:px-8 py-2.5 sm:py-3 hover:bg-emerald-700 disabled:bg-neutral-700 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors duration-300 text-sm sm:text-base w-full sm:w-auto"
                   >
                     {isSubmitting ? (
-                      <span className="flex items-center gap-2">
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span className="flex items-center justify-center gap-2">
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                         Sending...
                       </span>
                     ) : (
-                      <span className="flex items-center gap-2">
+                      <span className="flex items-center justify-center gap-2">
                         Send Message
-                        <Send className="w-5 h-5" />
+                        <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                       </span>
                     )}
                   </motion.button>
@@ -280,47 +282,49 @@ export const ContactContent = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.3 }}
-                className="grid md:grid-cols-3 gap-8"
+                className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
               >
                 <motion.div
                   variants={fadeUp}
-                  className="bg-neutral-900 border-2 border-neutral-700 rounded-lg p-6 text-center hover:border-emerald-600 transition-colors duration-300"
+                  className="dark:bg-neutral-900 bg-white border-2 dark:border-neutral-700 border-neutral-500 rounded-lg p-4 sm:p-6 text-center hover:border-emerald-600 transition-colors duration-300"
                 >
-                  <div className="w-12 h-12 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Mail className="w-6 h-6 text-emerald-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-neutral-200 mb-2">
+                  <h3 className="text-base sm:text-lg font-semibold dark:text-neutral-200 text-neutral-800 mb-2">
                     Email
                   </h3>
-                  <p className="text-neutral-400 text-sm break-all">
+                  <p className="dark:text-neutral-400 text-neutral-600 text-xs sm:text-sm break-all">
                     bienmarlon.qm@gmail.com
                   </p>
                 </motion.div>
 
                 <motion.div
                   variants={fadeUp}
-                  className="bg-neutral-900 border-2 border-neutral-700 rounded-lg p-6 text-center hover:border-emerald-600 transition-colors duration-300"
+                  className="dark:bg-neutral-900 bg-white border-2 dark:border-neutral-700 border-neutral-500 rounded-lg p-4 sm:p-6 text-center hover:border-emerald-600 transition-colors duration-300"
                 >
-                  <div className="w-12 h-12 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Phone className="w-6 h-6 text-emerald-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-neutral-200 mb-2">
+                  <h3 className="text-base sm:text-lg font-semibold dark:text-neutral-200 text-neutral-800 mb-2">
                     Phone
                   </h3>
-                  <p className="text-neutral-400 text-sm">+63 947 311 3789</p>
+                  <p className="dark:text-neutral-400 text-neutral-600 text-xs sm:text-sm">
+                    +63 947 311 3789
+                  </p>
                 </motion.div>
 
                 <motion.div
                   variants={fadeUp}
-                  className="bg-neutral-900 border-2 border-neutral-700 rounded-lg p-6 text-center hover:border-emerald-600 transition-colors duration-300"
+                  className="dark:bg-neutral-900 bg-white border-2 dark:border-neutral-700 border-neutral-500 rounded-lg p-4 sm:p-6 text-center hover:border-emerald-600 transition-colors duration-300"
                 >
-                  <div className="w-12 h-12 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MapPin className="w-6 h-6 text-emerald-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-600/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-neutral-200 mb-2">
+                  <h3 className="text-base sm:text-lg font-semibold dark:text-neutral-200 text-neutral-800 mb-2">
                     Location
                   </h3>
-                  <p className="text-neutral-400 text-sm">
+                  <p className="dark:text-neutral-400 text-neutral-600 text-xs sm:text-sm">
                     Batangas, Philippines
                   </p>
                 </motion.div>

@@ -39,15 +39,15 @@ export function Intro({ onComplete }: { onComplete: () => void }) {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-neutral-900">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-neutral-900 px-4">
       <div 
-        className={`flex flex-col items-center gap-8 transition-opacity duration-500 ${
+        className={`flex flex-col items-center gap-6 sm:gap-8 transition-opacity duration-500 ${
           fadeOut ? 'opacity-0' : 'opacity-100'
         }`}
       >
         {!hideGenerating && (
           <TextScramble
-            className="font-mono text-3xl font-bold text-white"
+            className="font-mono text-xl sm:text-2xl md:text-3xl font-bold text-white text-center"
             duration={0.8}
             characterSet=". "
           >
@@ -55,7 +55,7 @@ export function Intro({ onComplete }: { onComplete: () => void }) {
           </TextScramble>
         )}
         
-        <div className="flex items-center gap-3 text-4xl font-bold">
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-2xl sm:text-3xl md:text-4xl font-bold text-center">
           {showWelcome && (
             <TextEffect 
               per="word" 
@@ -67,7 +67,7 @@ export function Intro({ onComplete }: { onComplete: () => void }) {
             </TextEffect>
           )}
           
-          <span className="text-emerald-500">
+          <span className="text-emerald-500 break-all sm:break-normal">
             {showDomain && (
               <TextEffect 
                 per="char" 

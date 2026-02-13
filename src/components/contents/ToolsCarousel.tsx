@@ -4,51 +4,143 @@ import type { ToolsType } from "@/types";
 
 export const ToolsCarousel = ({ tools }: { tools: ToolsType[] }) => {
   const duplicatedTools = [...tools, ...tools, ...tools];
+  
+  // Split tools into two rows for mobile
+  const midPoint = Math.ceil(tools.length / 2);
+  const firstRowTools = tools.slice(0, midPoint);
+  const secondRowTools = tools.slice(midPoint);
+  
+  const duplicatedFirstRow = [...firstRowTools, ...firstRowTools, ...firstRowTools];
+  const duplicatedSecondRow = [...secondRowTools, ...secondRowTools, ...secondRowTools];
 
   return (
-    <div
-      className="overflow-hidden relative border-2 rounded-lg border-emerald-600"
-      style={{
-        boxShadow:
-          "inset 0 6px 20px rgba(0, 0, 0, 0.35), inset 0 -6px 15px rgba(0, 0, 0, 0.25)",
-      }}
-    >
-      <motion.div
-        className="flex gap-8"
-        animate={{
-          x: [0, -(tools.length * 120 + tools.length * 32)],
-        }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 20,
-            ease: "linear",
-          },
+    <>
+      {/* Desktop view - single row */}
+      <div
+        className="hidden md:block overflow-hidden relative border-2 rounded-lg border-emerald-600"
+        style={{
+          boxShadow:
+            "inset 0 6px 20px rgba(0, 0, 0, 0.35), inset 0 -6px 15px rgba(0, 0, 0, 0.25)",
         }}
       >
-        {duplicatedTools.map((tool, index) => {
-          return (
+        <motion.div
+          className="flex gap-8"
+          animate={{
+            x: [0, -(tools.length * 120 + tools.length * 32)],
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 20,
+              ease: "linear",
+            },
+          }}
+        >
+          {duplicatedTools.map((tool, index) => {
+            return (
+              <motion.div
+                key={`${tool.label}-${index}`}
+                className="flex-shrink-0 w-[120px] h-[120px] flex flex-col items-center justify-center gap-3 p-4 cursor-pointer"
+                whileHover={{
+                  scale: 1.25,
+                  transition: {
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 10,
+                  },
+                }}
+              >
+                <StackIcon name={tool.iconName} className="w-12 h-12" />
+                <span className="text-sm font-medium dark:text-neutral-300 text-center">
+                  {tool.label}
+                </span>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+
+      {/* Mobile view - two rows in one border */}
+      <div
+        className="md:hidden overflow-hidden relative border-2 rounded-lg border-emerald-600"
+        style={{
+          boxShadow:
+            "inset 0 6px 20px rgba(0, 0, 0, 0.35), inset 0 -6px 15px rgba(0, 0, 0, 0.25)",
+        }}
+      >
+        <div className="flex flex-col gap-4 py-4">
+          {/* First row - moves left to right */}
+          <div className="overflow-hidden">
             <motion.div
-              key={`${tool.label}-${index}`}
-              className="flex-shrink-0 w-[120px] h-[120px] flex flex-col items-center justify-center gap-3 p-4 cursor-pointer"
-              whileHover={{
-                scale: 1.25,
-                transition: {
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 10,
+              className="flex gap-6"
+              animate={{
+                x: [0, -(firstRowTools.length * 100 + firstRowTools.length * 24)],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 15,
+                  ease: "linear",
                 },
               }}
             >
-              <StackIcon name={tool.iconName} className="w-12 h-12" />
-              <span className="text-sm font-medium dark:text-neutral-300 text-center">
-                {tool.label}
-              </span>
+              {duplicatedFirstRow.map((tool, index) => {
+                return (
+                  <motion.div
+                    key={`first-${tool.label}-${index}`}
+                    className="flex-shrink-0 w-[100px] h-[100px] flex flex-col items-center justify-center gap-2 p-3 cursor-pointer"
+                    whileTap={{
+                      scale: 1.1,
+                    }}
+                  >
+                    <StackIcon name={tool.iconName} className="w-10 h-10" />
+                    <span className="text-xs font-medium dark:text-neutral-300 text-center">
+                      {tool.label}
+                    </span>
+                  </motion.div>
+                );
+              })}
             </motion.div>
-          );
-        })}
-      </motion.div>
-    </div>
+          </div>
+
+          {/* Second row - moves right to left (opposite direction) */}
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-6"
+              animate={{
+                x: [-(secondRowTools.length * 100 + secondRowTools.length * 24), 0],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 15,
+                  ease: "linear",
+                },
+              }}
+            >
+              {duplicatedSecondRow.map((tool, index) => {
+                return (
+                  <motion.div
+                    key={`second-${tool.label}-${index}`}
+                    className="flex-shrink-0 w-[100px] h-[100px] flex flex-col items-center justify-center gap-2 p-3 cursor-pointer"
+                    whileTap={{
+                      scale: 1.1,
+                    }}
+                  >
+                    <StackIcon name={tool.iconName} className="w-10 h-10" />
+                    <span className="text-xs font-medium dark:text-neutral-300 text-center">
+                      {tool.label}
+                    </span>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
