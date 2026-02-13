@@ -61,19 +61,21 @@ export function Intro({ onComplete }: { onComplete: () => void }) {
               per="word" 
               as="span" 
               preset="slide"
-              className="text-white"
+              className={`text-white transition-transform duration-500 ease-in ${
+                showDomain ? 'sm:-translate-x-59' : 'translate-x-0'
+              }`}
             >
               Welcome to
             </TextEffect>
           )}
           
-          <span className="text-emerald-500 break-all sm:break-normal">
+          <span className="absolute text-emerald-500 break-all sm:break-normal">
             {showDomain && (
               <TextEffect 
                 per="char" 
                 as="span" 
                 preset="fade"
-                delay={0.3}
+                delay={0.5}
               >
                 bienm.vercel.app
               </TextEffect>
