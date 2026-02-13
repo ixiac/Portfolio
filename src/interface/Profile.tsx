@@ -4,12 +4,21 @@ import { Tilt } from "@/components/ui/tilt";
 import { BorderTrail } from "@/components/ui/border-trail";
 import { GlowEffect } from "@/components/ui/glow-effect";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export const Profile = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="lg:sticky lg:top-6 lg:self-start m-6 mt-13">
+    <motion.div
+      className="lg:sticky lg:top-6 lg:self-start m-6 mt-13"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut"
+      }}
+    >
       <Tilt rotationFactor={1.0} isRevese>
         <div 
           className="relative inline-block"
@@ -35,7 +44,6 @@ export const Profile = () => {
                 </h1>
                 <p className="text-sm text-emerald-600">Developer & Analyst</p>
               </div>
-
               <div className="flex justify-center">
                 <div className="relative w-full max-w-[300px] aspect-square rounded-2xl">
                   <img
@@ -53,26 +61,22 @@ export const Profile = () => {
                   />
                 </div>
               </div>
-
               <div className="mt-2 flex flex-col gap-2">
                 <p className="text-sm dark:text-neutral-300">Specialization: </p>
                 <p className="text-sm capitalize">
                   Web Application Development & Data Analytics
                 </p>
               </div>
-
               <div className="mt-2 flex flex-col gap-2">
                 <p className="text-sm dark:text-neutral-300">Based in: </p>
                 <p className="text-sm capitalize">Batangas, Philippines</p>
               </div>
-
               <div className="mt-2 flex flex-col gap-2">
                 <p className="text-sm dark:text-neutral-300">Status:</p>
                 <p className="text-sm text-green-600 dark:text-green-500 capitalize">
                   Open to work
                 </p>
               </div>
-
               <div className="flex justify-between mt-4">
                 <div className="flex gap-3">
                   {socialLinks.map((social, i) => {
@@ -98,6 +102,6 @@ export const Profile = () => {
           </aside>
         </div>
       </Tilt>
-    </div>
+    </motion.div>
   );
 };
