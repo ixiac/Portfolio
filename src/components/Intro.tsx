@@ -62,7 +62,7 @@ export function Intro({ onComplete }: { onComplete: () => void }) {
               as="span" 
               preset="slide"
               className={`text-white transition-transform duration-500 ease-in ${
-                showDomain ? 'sm:-translate-x-59' : 'translate-x-0'
+                showDomain ? '-translate-y-7 lg:translate-y-0 lg:-translate-x-59' : 'translate-x-0'
               }`}
             >
               Welcome to
